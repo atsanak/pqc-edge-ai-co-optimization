@@ -1,0 +1,50 @@
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Credentials and local certificates
+*.key
+*.pem
+src/network/certs/
+network/certs/
+
+# Model weights and generated ML artifacts
+*.pt
+*.pth
+*.onnx
+*.engine
+*.npz
+*.npy
+weights/
+checkpoints/
+
+# Datasets and generated benchmark outputs
+ua_detrac/
+mot17/
+dataset_20fps/
+datasets/
+data/
+runs/
+outputs/
+predicted_labels/
+gt_labels/
+
+# Editor and OS noise
+.idea/
+.vscode/
+*.swp
+*.swo

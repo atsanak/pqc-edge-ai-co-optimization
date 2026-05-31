@@ -1,0 +1,196 @@
+{
+  "_comment": "Per-scene grid configurations for UA-DETRAC benchmark. Grid sizes from grid_search_summary.txt (best mAP@50 per scene). Per-scene v2_params (LKT, recheck, YRI) from stress-test results (hand-picked best config per scene).",
+  "split": "val",
+  "version": "v2",
+  "default_v2_params": {
+    "saliency_method": "frame_diff",
+    "saliency_measurement": "pixel_count",
+    "yolo_weight": "yolo11s.pt",
+    "use_finetuned": false,
+    "saliency_scale": 0.5,
+    "enable_tile_combination": true,
+    "max_combined_tiles": 4,
+    "recheck_threshold": 3,
+    "enable_recheck_tile": false,
+    "enable_tile_memory": false,
+    "motion_unblacklist_pct": 0.03,
+    "merge_add_tile_motion_pct": 0.0,
+    "blacklist_ttl": 15,
+    "fullframe_every": 30,
+    "prediction_fusion": true,
+    "fusion_edge_margin_pct": 0.02,
+    "enable_lkt_tracking": false,
+    "lkt_refresh_interval": 5,
+    "lkt_min_points": 4,
+    "lkt_max_corners": 15,
+    "lkt_quality_level": 0.01,
+    "merge_overlapping_bboxes": false,
+    "class_filter": null,
+    "enable_saliency_suppression": true,
+    "saliency_suppression_rate": 2.0,
+    "saliency_suppression_decay": 0.05,
+    "yolo_run_interval": 1
+  },
+  "sequences": {
+    "MVI_39031": {
+      "rows": 2, "cols": 4,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_39051": {
+      "rows": 2, "cols": 4,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_39211": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_39271": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_39311": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_39361": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 2 }
+    },
+    "MVI_39371": {
+      "rows": 3, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": true,  "yolo_run_interval": 2 }
+    },
+    "MVI_39401": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_39501": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 2 }
+    },
+    "MVI_39511": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": false, "yolo_run_interval": 2 }
+    },
+    "MVI_40701": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40711": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40712": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40714": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40742": {
+      "rows": 3, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40743": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40761": {
+      "rows": 2, "cols": 4,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40762": {
+      "rows": 5, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40763": {
+      "rows": 4, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40771": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40772": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40773": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40774": {
+      "rows": 4, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40775": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40792": {
+      "rows": 2, "cols": 5,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40793": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40851": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40852": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40853": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40854": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40855": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40863": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40864": {
+      "rows": 4, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40891": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40892": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40901": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40902": {
+      "rows": 4, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    },
+    "MVI_40903": {
+      "rows": 2, "cols": 3,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 2 }
+    },
+    "MVI_40904": {
+      "rows": 2, "cols": 4,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MVI_40905": {
+      "rows": 3, "cols": 2,
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 3 }
+    }
+  }
+}

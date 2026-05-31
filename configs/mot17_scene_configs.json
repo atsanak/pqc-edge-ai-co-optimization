@@ -1,0 +1,71 @@
+{
+  "_comment": "Per-scene grid configurations for MOT17 benchmark. Grid sizes from grid_search_summary.txt (best mAP@50 per scene). Per-scene v2_params (LKT, recheck, YRI) from stress-test results (hand-picked best config per scene).",
+  "split": "train",
+  "version": "v2",
+  "default_v2_params": {
+    "saliency_method": "frame_diff",
+    "saliency_measurement": "pixel_count",
+    "yolo_weight": "yolo11s.pt",
+    "use_finetuned": false,
+    "saliency_scale": 0.5,
+    "enable_tile_combination": true,
+    "max_combined_tiles": 4,
+    "recheck_threshold": 3,
+    "enable_recheck_tile": false,
+    "enable_tile_memory": false,
+    "motion_unblacklist_pct": 0.03,
+    "merge_add_tile_motion_pct": 0.0,
+    "blacklist_ttl": 15,
+    "fullframe_every": 30,
+    "prediction_fusion": true,
+    "fusion_edge_margin_pct": 0.02,
+    "enable_lkt_tracking": false,
+    "lkt_refresh_interval": 5,
+    "lkt_min_points": 4,
+    "lkt_max_corners": 15,
+    "lkt_quality_level": 0.01,
+    "merge_overlapping_bboxes": false,
+    "class_filter": null,
+    "enable_saliency_suppression": true,
+    "saliency_suppression_rate": 2.0,
+    "saliency_suppression_decay": 0.05,
+    "yolo_run_interval": 1
+  },
+  "sequences": {
+    "MOT17-02": {
+      "rows": 3, "cols": 2,
+      "camera_type": "static",
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MOT17-04": {
+      "rows": 2, "cols": 3,
+      "camera_type": "static",
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MOT17-05": {
+      "rows": 2, "cols": 3,
+      "camera_type": "moving",
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": false, "yolo_run_interval": 2 }
+    },
+    "MOT17-09": {
+      "rows": 3, "cols": 2,
+      "camera_type": "static",
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": false, "yolo_run_interval": 2 }
+    },
+    "MOT17-10": {
+      "rows": 2, "cols": 3,
+      "camera_type": "moving",
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    },
+    "MOT17-11": {
+      "rows": 3, "cols": 2,
+      "camera_type": "moving",
+      "v2_params": { "enable_lkt_tracking": false, "enable_recheck_tile": true,  "yolo_run_interval": 1 }
+    },
+    "MOT17-13": {
+      "rows": 3, "cols": 2,
+      "camera_type": "moving",
+      "v2_params": { "enable_lkt_tracking": true,  "enable_recheck_tile": true,  "yolo_run_interval": 3 }
+    }
+  }
+}
