@@ -1,24 +1,6 @@
 # CO-Optimized PQC Edge-AI Split Inference
 
-> **Public review version.** Representative implementation and sanitized artifact; full datasets, weights, and the server-GPU energy campaign are private. See *Public scope* below.
-
-## What this repo proves
-
-- I can co-design **edge perception + transport security**: AttentionGrid tile selection on the edge client with optional classical-TLS or **PQC-hybrid** protection per request.
-- I can quantify a real **data/accuracy/latency trade-off** end to end and emit a verifiable summary (per-config verification status, signature/decrypt failure counts, payload-hash checks).
-- I can integrate a **PQC transport** (ML-KEM + ML-DSA) around a CUDA/YOLO inference service without breaking detection quality.
-
-## Public scope (read before judging the numbers)
-
-This is a **sanitized artifact**: datasets, trained weights, and raw run directories are excluded. The public trusted source [`results/verified_summary.csv`](results/verified_summary.csv) (340 rows) **does** demonstrate the headline data win directly — AttentionGrid cuts on-wire upload **~76%** (≈341→83 MB on UA-DETRAC) while holding mAP/recall, and includes PQC-vs-classical deltas. The **2.91× throughput** and **4.4× server-GPU energy-per-frame** multipliers quoted on my CV come from the **fuller private campaign** and are **not** restated as public results here.
-
-## Reviewer guide — start here
-
-1. Open [`results/verified_summary.csv`](results/verified_summary.csv) and the **Key Verified Results** table below; run `python scripts/verify_public_results.py` to re-check it.
-2. Read `src/attention_gridv2.py` (saliency/tiling) and `src/network/` (classical/PQC transport).
-3. Optional: full reproduction needs the supported datasets, YOLO weights, and edge/server hardware (see `docs/reproduction.md`).
-
-**CV → this repo:** evidence for *"adaptive edge-to-cloud perception pipeline."* The ~76% upload reduction is publicly verifiable in the CSV; the throughput/energy multipliers are from the private campaign.
+> This is a public, demo/review version of a larger project. Datasets, trained weights, and the server-GPU energy campaign are private, so the public results here come from a smaller subset and some numbers differ from the full private work. The trusted public source is `results/verified_summary.csv`.
 
 ## Overview
 
