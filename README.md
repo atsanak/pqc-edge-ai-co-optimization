@@ -6,6 +6,12 @@
 
 This repository contains a sanitized implementation of an AttentionGrid split-inference benchmark for edge video analytics under classical TLS and post-quantum transport modes. The benchmark compares full-frame cloud inference against AttentionGrid tile selection on an edge client, with optional application-layer classical or PQC hybrid protection around each request.
 
+## Quick Technical Review
+
+- Inspect the AttentionGrid selection and adaptive-encoding path in [`src/attention_gridv2.py`](src/attention_gridv2.py).
+- Follow request framing and cryptographic protection through [`pqc_protocol.py`](src/network/pqc_protocol.py) and [`pqc_crypto.py`](src/network/pqc_crypto.py).
+- Check the [verified public results](results/verified_summary.csv) with [`scripts/verify_public_results.py`](scripts/verify_public_results.py); no private dataset or model weights are required.
+
 ## What Problem This Solves
 
 Edge devices often have limited compute and uplink bandwidth, while remote inference adds network and cryptographic cost. This project evaluates whether co-optimizing attention-based tile selection and transport security can reduce uploaded data while preserving detection quality and verifiable transport behavior.
