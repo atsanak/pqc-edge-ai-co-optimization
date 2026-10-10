@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import math
 from collections import Counter
 from pathlib import Path
 
@@ -209,6 +210,29 @@ def verify(path: Path) -> list[dict[str, str]]:
     counts = Counter((r["dataset"], r["mode"]) for r in rows)
     if counts != EXPECTED_COUNTS:
         fail(f"unexpected dataset/mode counts: {dict(counts)}")
+
+    keys = Counter(selected_key(row) for row in rows)
+    duplicated = [key for key, count in keys.items() if count != 1]
+    if duplicated:
+        fail(f"duplicate dataset/mode/crypto/scheme keys: {duplicated[:3]}")
+
+    for index, row in enumerate(rows, 2):
+        try:
+            sequences = int(row["n_sequences"])
+            frames = int(row["total_frames"])
+            sig = int(row["signature_failure_count_sum"])
+            dec = int(row["decrypt_failure_count_sum"])
+            metrics = {name: float(row[name]) for name in
+                       ("fps", "mAP_50", "unique_recall", "net_upload_MB",
+                        "net_avg_rtt_ms", "avg_sign_pq_ms")}
+        except (KeyError, TypeError, ValueError):
+            fail(f"row {index}: malformed required count or metric")
+        if sequences <= 0 or frames <= 0 or sig < 0 or dec < 0:
+            fail(f"row {index}: invalid count")
+        if any(not math.isfinite(value) or value < 0 for value in metrics.values()):
+            fail(f"row {index}: nonfinite or negative metric")
+        if metrics["mAP_50"] > 1 or metrics["unique_recall"] > 1:
+            fail(f"row {index}: detection fraction outside [0,1]")
 
     bad_verify = [r for r in rows if r["all_verification_ok"] != "True"]
     if bad_verify:

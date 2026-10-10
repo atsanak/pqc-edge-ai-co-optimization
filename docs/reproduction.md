@@ -84,6 +84,8 @@ python scripts/verify_public_results.py --print-selected
 
 This verifies row counts, transport verification status, payload hash checks, failure counts, and the exact selected rows shown in `README.md`.
 
+The verifier also rejects duplicate dataset/mode/crypto/scheme keys, nonfinite or negative headline metrics, out-of-range detection fractions and malformed counts. These checks act on the released CSV; they do not recompute detector quality from private labels or create unavailable GPU-energy measurements. Run `python3 -m unittest discover -s scripts -p 'test_*.py'` for mutation controls.
+
 ## Output Files
 
 Single runs produce:

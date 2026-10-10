@@ -8,6 +8,8 @@ This repository contains a sanitized implementation of an AttentionGrid split-in
 
 ## Quick Technical Review
 
+**New public evidence gate:** the released 340-row CSV verifier rejects duplicate configuration keys, nonfinite metrics and invalid detection fractions. Mutation controls run in CI; private datasets and weights are still excluded. The [Zephyr/TF-M PQC measurement showcase](https://github.com/atsanak/zephyr-tfm-pqc-measurement-showcase) is a separate synthetic example of supply-domain evidence checking.
+
 - Inspect the AttentionGrid selection and adaptive-encoding path in [`src/attention_gridv2.py`](src/attention_gridv2.py).
 - Follow request framing and cryptographic protection through [`pqc_protocol.py`](src/network/pqc_protocol.py) and [`pqc_crypto.py`](src/network/pqc_crypto.py).
 - Check the [verified public results](results/verified_summary.csv) with [`scripts/verify_public_results.py`](scripts/verify_public_results.py); no private dataset or model weights are required.
